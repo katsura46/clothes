@@ -1,0 +1,104 @@
+@import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+.btn-edit {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 50px;
+  font-size: 40px;
+  color: #FFFFDD;
+  background-color: #00F9A9;
+}
+
+.btn-sign-up {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 50px;
+  font-size: 40px;
+  color: #FFFFDD;
+  background-color: #00F9A9;
+}
+
+.btn-log-in {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 50px;
+  font-size: 40px;
+  color: #FFFFDD;
+  background-color: #005FFF;
+}
+
+.clothe-image-text {
+  width: 300px;
+  height: 350px;
+  margin: 30px;
+  background-color: skyblue;
+}
+
+.clothe-image {
+  width: 400px;
+  height: 500px;
+}
+
+.clothe-image-index {
+  width: 250px;
+  height: 250px;
+}
+
+.container{
+  font-family: "Comic Sans MS";
+}
+
+.d-flex {
+  display: inline-flex;
+  padding: 10px;
+
+}
+
+.long-photo {
+  width: 1500px;
+  height: 150px;
+}
+
+.navbar {
+  height: 100px;
+  color: #FFFFDD;
+  background-color: #00BFFF;
+}
+
+.navbar-brand {
+  font-size: 50px;
+  font-family: "Comic Sans MS";
+}
+
+.navbar-nav {
+  font-size: 30px;
+  font-family: "Comic Sans MS";
+  margin: 30px 0;
+}
+
+.profile {
+  margin: 0px 0px 0px 50px;
+  background-color: pink;
+}
+
+.profile-image {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+}
+
+.profile-image-info {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+}

@@ -1,0 +1,22 @@
+<div class = "container">
+  <div class ="row">
+    <div class = "col-7">
+      <h2>会員登録をしてみんなと共有しよう！！</h2>
+      <%= link_to new_user_registration_path, class: "btn btn-sign-up" do %>
+        <i class="fas fa-user-plus"></i>Sign up
+      <% end %>
+      <h2>既にアカウントをお持ちの方</h2>
+      <%= link_to new_user_session_path, class: "btn btn-log-in" do %>
+        <i class="fas fa-sign-in-alt"></i>Log in
+      <% end %>
+    </div>
+    <div class ="col-5">
+      <h4>みんなの購入した服を見てみよう！！</h4>
+      <p>
+        ゲストログインは
+        <%= link_to "こちら", clothes_path %>
+        から
+      </p>
+    </div>
+  </div>
+</div>
