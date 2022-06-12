@@ -1,12 +1,12 @@
 <div class = "container">
-<%= form_with model:@cloth, url: clothes_path, method: :post, local:true do |f| %>
+<%= form_with model:@post, url: posts_path, method: :post, local:true do |f| %>
   <div class = "row form-group">
     <label>投稿タイトル</label>
     <%= f.text_field :title, autofocus: true, class: "form-control" %>
   </div>
   <div class = "row">
     <label>投稿写真</label>
-    <%= f.file_field :cloth_image, class: "form-control" %>
+    <%= f.file_field :post_image, class: "form-control" %>
   </div>
   <div class = "row">
     <label>ジャンル選択</label>

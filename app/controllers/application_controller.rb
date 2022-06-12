@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   # 新規登録後のリダイレクト先を投稿一覧ページへ
   def after_sign_in_path_for(resource)
     flash[:notice] = "ログインに成功しました"
-    clothes_path  #　ログイン後の遷移先のパス
+    posts_path  #　ログイン後の遷移先のパス
   end
-  
+
 end

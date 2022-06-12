@@ -1,5 +1,5 @@
 class Genre < ApplicationRecord
 
-  has_many :clothes,dependent: :destroy
+  has_many :posts,dependent: :destroy
 
 end

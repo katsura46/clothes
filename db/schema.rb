@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_12_051842) do
+ActiveRecord::Schema.define(version: 2022_06_12_054811) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -51,23 +51,12 @@ ActiveRecord::Schema.define(version: 2022_06_12_051842) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "cloths", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "genre_id"
-    t.string "title"
-    t.text "comment"
-    t.string "brand"
-    t.integer "price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.integer "cloth_id", null: false
+    t.integer "post_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["cloth_id"], name: "index_favorites_on_cloth_id"
+    t.index ["post_id"], name: "index_favorites_on_post_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
@@ -78,6 +67,17 @@ ActiveRecord::Schema.define(version: 2022_06_12_051842) do
   end
 
   create_table "homes", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "genre_id"
+    t.string "title"
+    t.text "comment"
+    t.string "brand"
+    t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -106,6 +106,6 @@ ActiveRecord::Schema.define(version: 2022_06_12_051842) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "favorites", "cloths"
+  add_foreign_key "favorites", "posts"
   add_foreign_key "favorites", "users"
 end

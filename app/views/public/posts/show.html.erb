@@ -1,44 +1,44 @@
-
+<div class = "container">
   <div class = "row long-photo">
     <%= image_tag 'default-image.jpg', class:'long-photo' %>
   </div>
   <div class = "row">
     <%= render "public/users/current_user_info" %>
-    <div class = "col offset-1 d-flex flex-wrap">
-      <div class = "col-6">
-        <%= image_tag @clothe.cloth_image, class: "clothe-image" %>
+    <div class = "col d-flex flex-wrap">
+      <div class = "col-7">
+        <%= image_tag @post.post_image, class: "post-image" %>
       </div>
-      <div class = "col-6">
+      <div class = "col-5">
         <div class = "row">
           <label>投稿タイトル：</label>
-          <%= @clothe.title %>
+          <%= @post.title %>
           <label class = "ml-3">ジャンル：</label>
-          <%= @cloteh.genre.genre_name %>
-          <% if @clothe_favorite?(current_user) %>
-            <%= link_to clothe_favorite_path(@clothe), method: :delete, do %>
+          <%= @post.genre.genre_name %>
+          <% if @post.favorited?(current_user) %>
+            <%= link_to post_favorites_path(@post.id), method: :delete do %>
               <span style="color:red;">❤︎</span>
             <% end %>
           <% else %>
-            <%= link_to clothe_favorites_path(@clothe), method: :post do %>
+            <%= link_to post_favorites_path(@post.id), method: :post do %>
               <span>❤︎</span>
             <% end %>
           <% end %>
         </div>
         <div class = "row">
           <label>ブランド名：</label>
-          <%= @clothe.brand %>
+          <%= @post.brand %>
           <label class = "ml-3">値段：</label>
-            <%= @clothe.price %>円
+            <%= @post.price %>円
         </div>
         <div class = "row">
           <label>投稿者コメント：</label>
-          <%= @clothe.comment %>
+          <%= @post.comment %>
         </div>
         <div class = "row">
-          <div class = "col-4">
+          <div class = "col-6">
           <%= image_tag @user.profile_image, class: "profile-image-info" %>
           </div>
-          <div class = "col-8">
+          <div class = "col-6">
             <label>投稿者：</label>
             <%= link_to user_path(@user.id) do %>
               <%= @user.name %>
@@ -50,4 +50,10 @@
       </div>
     </div>
   </div>
-
+  <div class = "row">
+    <div class = "col-12">
+      <h1>ssss</h1>
+    </div>
+  </div>
+</div>
+  

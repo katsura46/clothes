@@ -1,4 +1,4 @@
-<div class = "col-2 profile text-center">
+<div class = "col-3 profile text-center">
   <h2>User info</h2>
   <div class = "user-info">
     <div class = "user-image">
@@ -11,7 +11,7 @@
           <td><%= current_user.name %></td>
         </tr>
         <tr>
-          <th><%= link_to "新規投稿する", new_clothe_path %></th>
+          <th><%= link_to "新規投稿する", new_post_path %></th>
         </tr>
         <tr>
           <th><%= link_to "フォローリスト", user_followings_path(current_user) %></th>
