@@ -1,0 +1,8 @@
+<div class = "row mt-3 text-center">
+  <div class = "col offset-1">
+    <%= form_with(model:[post, comment], local: false) do |f| %>
+      <%= f.text_area :comment, size: "70x2" %>
+      <%= f.submit 'コメント送信', class: "btn-sm btn-primary" %>
+    <% end %>
+  </div>
+</div>

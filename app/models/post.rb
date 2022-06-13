@@ -1,6 +1,11 @@
 class Post < ApplicationRecord
   belongs_to :user
   belongs_to :genre
+
+  # コメント機能
+  has_many :comments, dependent: :destroy
+
+  # いいね機能
   has_many :favorites, dependent: :destroy
 
   def favorited?(user)

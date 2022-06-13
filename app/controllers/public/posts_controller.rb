@@ -24,6 +24,8 @@ class Public::PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @user = @post.user
+    @comment = Comment.new
+    @comments = @post.comments
   end
 
   def edit
@@ -35,7 +37,7 @@ class Public::PostsController < ApplicationController
   def destroy
   end
 
-   private
+  private
 
   def post_params
     params.require(:post).permit(:title, :comment, :genre_id, :brand, :price, :post_image)

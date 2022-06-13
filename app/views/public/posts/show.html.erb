@@ -14,15 +14,9 @@
           <%= @post.title %>
           <label class = "ml-3">ジャンル：</label>
           <%= @post.genre.genre_name %>
-          <% if @post.favorited?(current_user) %>
-            <%= link_to post_favorites_path(@post.id), method: :delete do %>
-              <span style="color:red;">❤︎</span>
-            <% end %>
-          <% else %>
-            <%= link_to post_favorites_path(@post.id), method: :post do %>
-              <span>❤︎</span>
-            <% end %>
-          <% end %>
+          <div class = "favorite_icon", id = "favorite_buttons_<%= @post.id %>">
+            <%= render "public/favorites/favorite", post: @post %>
+          </div>
         </div>
         <div class = "row">
           <label>ブランド名：</label>
@@ -51,9 +45,16 @@
     </div>
   </div>
   <div class = "row">
-    <div class = "col-12">
-      <h1>ssss</h1>
+    <div class = "new-comment">
+      <%= render "public/comments/form", post: @post, comment: @comment %>
+    </div>
+  </div>
+  <div class = "row mb-5">
+    <div class = "col offset-1">
+      <div id = "comments_area">
+        <%= render "public/comments/post_comments", post: @post, comments: @comments %>
+      </div>
     </div>
   </div>
 </div>
-  
+

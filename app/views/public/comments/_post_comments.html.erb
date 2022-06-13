@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>コメント投稿者</th>
+      <th>コメント内容</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% post.comments.each do |comment| %>
+      <tr>
+        <td><%= image_tag comment.user.profile_image, class: "profile-image-comment" %></td>
+        <td><%= comment.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+        <td><%= comment.user.name %></td>
+        <td><%= comment.comment %></td>
+        <td><%= link_to "削除", post_comment_path(post, comment), method: :delete, remote: true, data: {confirm: "本当に削除しますか？"} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+ </table>

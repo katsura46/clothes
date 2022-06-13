@@ -37,6 +37,16 @@
   background-color: #005FFF;
 }
 
+.d-flex {
+  display: inline-flex;
+  padding: 10px;
+
+}
+
+.favorite_icon {
+  font-size: 40px;
+}
+
 .post-image-text {
   width: 300px;
   height: 350px;
@@ -58,11 +68,7 @@
   font-family: "Comic Sans MS";
 }
 
-.d-flex {
-  display: inline-flex;
-  padding: 10px;
 
-}
 
 .long-photo {
   width: 1500px;
@@ -94,11 +100,17 @@
 .profile-image {
   width: 400px;
   height: 400px;
+  border-radius: 50%; /* 角丸半径を50%にする(=円形にする) */
+}
+
+.profile-image-comment {
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
 }
 
 .profile-image-info {
   width: 150px;
   height: 150px;
-  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+  border-radius: 50%;
 }

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'comments/create'
+  get 'comments/destroy'
   devise_for :users,skip: [:passwords], controllers: {
   registrations: "public/registrations",
   sessions: 'public/sessions'
@@ -16,9 +18,13 @@ Rails.application.routes.draw do
   scope module: :public do
 
     get 'users/log_out_confirm'
-    
+
     resources :posts, only:[:new, :create, :index, :show, :edit, :update, :destroy] do
       resource :favorites, only: [:create, :destroy]
+    end
+    
+    resources :posts, except: [:index] do
+      resources :comments, only: [:create, :destroy]
     end
 
     resources :users, only:[:index, :show, :edit, :update] do
