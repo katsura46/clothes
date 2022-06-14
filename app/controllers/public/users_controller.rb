@@ -1,5 +1,7 @@
 class  Public::UsersController < ApplicationController
   def index
+    @users = User.all
+    @user = User.find(params[:id])
   end
 
   def show
@@ -23,9 +25,9 @@ class  Public::UsersController < ApplicationController
 
   def log_out_confirm
   end
-  
+
   private
-  
+
   def user_params
     params.require(:user).permit(:name, :introduction, :profile_image, :email)
   end

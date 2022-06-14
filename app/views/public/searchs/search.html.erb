@@ -1,0 +1,13 @@
+<div class = "row long-photo">
+  <%= image_tag 'default-image.jpg', class:'long-photo' %>
+</div>
+<% if @model == 'user' %>
+  <h3>【ユーザー名：（<%= @content %>）の検索結果】</h3>
+  <%= render 'public/users/index', users: @records %>
+<% elsif @model == 'posts' %>
+  <h3>【投稿タイトル：（<%= @content %>）の検索結果】</h3>
+  <%= render 'public/posts/index', posts: @records %>
+<% else @model == 'brand' %>
+  <h3>【ブランド名：（<%= @content %>）の検索結果】</h3>
+  <%= render 'public/posts/index', posts: @records %>
+<% end %>

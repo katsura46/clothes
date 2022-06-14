@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+    <%= form_tag(search_path, method: :get) do %>
+      <i class="fas fa-search"></i>
+      <label>検索</label>
+      <%= select_tag 'model', options_for_select({ "ユーザー名" => "user", "投稿タイトル" => "post", "ブランド名" => "brand" }) %>
+      <%= text_field_tag 'content' %>
+      <%= submit_tag '検索' %>
+    <% end %>
+<% end %>

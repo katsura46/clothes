@@ -18,11 +18,12 @@ Rails.application.routes.draw do
   scope module: :public do
 
     get 'users/log_out_confirm'
+    get '/search', to: 'searchs#search'
 
     resources :posts, only:[:new, :create, :index, :show, :edit, :update, :destroy] do
       resource :favorites, only: [:create, :destroy]
     end
-    
+
     resources :posts, except: [:index] do
       resources :comments, only: [:create, :destroy]
     end
