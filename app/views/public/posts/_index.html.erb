@@ -1,3 +1,6 @@
+<div class = "row long-photo">
+  <%= image_tag 'default-image.jpg', class:'long-photo' %>
+</div>
 <div class = "row">
   <div class = "col offset-3">
     <%= render 'public/searchs/form' %>
@@ -5,15 +8,25 @@
 </div>
 <div class = "row">
   <%= render "public/users/current_user_info" %>
-  <div class = "col-8 offset-1 d-flex flex-wrap"><% posts.each do |post| %>
+  
+  <div class = "col-8 offset-1 d-flex flex-wrap">
+    <% posts.each do |post| %>
     <div class="row">
       <%= link_to post_path(post) do %>
         <div class="post-image-text card-effect text-center">
           <div class="post-image-box">
             <%= image_tag post.post_image, class: "post-image-index" %>
           </div>
-            <div class="post-title my-2">
-              <strong>title:</strong><%= post.title %>
+          <div class = "post-category">
+            <% post.tags.each do |tag| %>
+              <%= tag.name %>
+            <% end %>
+          </div>
+          <div class = "post-daytime">
+            投稿日時：<%= post.created_at.strftime('%Y/%m/%d %H:%M') %>
+          </div>
+          <div class="post-title my-2">
+            <strong>title:</strong><%= post.title %>
           </div>
         </div>
       <% end %>

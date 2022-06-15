@@ -12,6 +12,9 @@
         <div class = "row">
           <label>投稿タイトル：</label>
           <%= @post.title %>
+          <% @post.tags.each do |tag| %>
+            <%= tag.name %>
+          <% end %>
           <label class = "ml-3">ジャンル：</label>
           <%= @post.genre.genre_name %>
         </div>

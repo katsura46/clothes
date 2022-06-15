@@ -15,22 +15,24 @@
       <% end %>
     </div>
   <% end %>
-  <div class = "row">
+  <div class = "row　d-flex flex-wrap">
+    <div class = "col-7">
       <table>
         <thead>
           <tr>
-            <th>ジャンル名</th>
+            <th></th>
             <th></th>
           </tr>
         </thead>
-      <% @genres.each do |genre| %>
+        <% @genres.each do |genre| %>
         <tbody>
           <tr>
             <td><%= genre.genre_name %></td>
             <td><%= link_to "edit", edit_admin_genre_path(genre), class: "btn btn-edit" %></td>
           </tr>
         </tbody>
-       <% end %>
+        <% end %>
       </table>
+    </div>
   </div>
 </div>

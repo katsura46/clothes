@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
     get 'users/log_out_confirm'
     get '/search', to: 'searchs#search'
+    get 'category' => 'posts#category'
+    get 'favorites' => 'users#favorites'
 
     resources :posts, only:[:new, :create, :index, :show, :edit, :update, :destroy] do
       resource :favorites, only: [:create, :destroy]

@@ -5,9 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts, dependent: :destroy
-  
+
   # 性別の表示
-  enum sex: { man: 0, woman: 1}
+  enum sex: { men: 0, women: 1}
 
   # コメント機能
   has_many :comments, dependent: :destroy

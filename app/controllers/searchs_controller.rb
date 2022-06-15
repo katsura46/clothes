@@ -23,6 +23,8 @@ class Public::SearchsController < ApplicationController
     # 選択したモデルがbrandなら 
     elsif model == 'brand'
       Post.where('brand LIKE ?', '%'+content+'%')
+      
+    
     end
 
   end

@@ -2,6 +2,7 @@ class Public::PostsController < ApplicationController
   def new
     @post = Post.new
     @genres = Genre.all
+    @tags = Tag.all
   end
 
   def create
@@ -17,8 +18,13 @@ class Public::PostsController < ApplicationController
     end
   end
 
+  def category
+    @tags = Tag.all
+  end
+
   def index
-    @posts = Post.all
+    @posts = params[:name].present? ? Tag.find(params[:name]).posts : Post.all
+    @tags = Tag.all
   end
 
   def show
@@ -46,9 +52,10 @@ class Public::PostsController < ApplicationController
   def destroy
   end
 
+
   private
 
   def post_params
-    params.require(:post).permit(:title, :comment, :genre_id, :brand, :price, :post_image)
+    params.require(:post).permit(:title, :comment, :genre_id, :brand, :price, :post_image,  tag_ids: [])
   end
 end

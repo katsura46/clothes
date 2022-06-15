@@ -2,5 +2,5 @@ ja:
   enums:
     user:
       sex:
-        man: "男性"
-        woman: "女性"
+        men: "男性"
+        women: "女性"

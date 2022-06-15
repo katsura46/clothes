@@ -1,0 +1,12 @@
+  <div>
+    <%= form_tag posts_path, class: 'boards__searchForm' do %>
+      <% @tags.each do |tag| %>
+        <div class="tag-box">
+          <%= link_to tag.name, posts_path(name: tag.id) %>
+        </div>
+      <% end %>
+        <div class="tag-box">
+          <%= link_to "全ての投稿", posts_path %>
+        </div>
+    <% end %>
+  </div>
