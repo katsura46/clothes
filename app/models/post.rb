@@ -1,4 +1,7 @@
 class Post < ApplicationRecord
+  # 新着順へ並び方を変更する機能 
+  default_scope -> { order(created_at: :desc) }
+  
   belongs_to :user
   belongs_to :genre
 

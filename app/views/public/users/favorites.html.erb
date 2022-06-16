@@ -20,6 +20,10 @@
               <div class = "post-daytime">
                 投稿日時：<%= post.created_at.strftime('%Y/%m/%d %H:%M') %>
               </div>
+              <div class = "favorite-count">
+                いいね数：<i class="fas fa-smile-wink", style="color:red;"></i>
+                <%= post.favorites.count %>
+              </div>
               <div class="post-title my-2">
                 <strong>title:</strong><%= post.title %>
               </div>

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'comments/create'
   get 'comments/destroy'
-  devise_for :users,skip: [:passwords], controllers: {
+  devise_for :users, controllers: {
   registrations: "public/registrations",
   sessions: 'public/sessions'
   }
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     get 'users/log_out_confirm'
     get '/search', to: 'searchs#search'
     get 'category' => 'posts#category'
-    get 'favorites' => 'users#favorites'
+
 
     resources :posts, only:[:new, :create, :index, :show, :edit, :update, :destroy] do
       resource :favorites, only: [:create, :destroy]
@@ -34,6 +34,12 @@ Rails.application.routes.draw do
       resource :relationships, only: [:create, :destroy]
       get 'followings' => 'relationships#followings', as: 'followings'
       get 'followers' => 'relationships#followers', as: 'followers'
+      get 'favorites' => 'users#favorites'
+
+       # 退会確認画面
+      get 'unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
+       # 論理削除用のルーティング
+      patch 'withdrawal' => 'users#withdrawal', as: 'withdrawal'
     end
   end
 

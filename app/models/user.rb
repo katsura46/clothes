@@ -38,6 +38,11 @@ class User < ApplicationRecord
    followings.include?(user)
   end
 
+  # is_deletedがfalseならtrueを返すようにしている
+  def active_for_authentication?
+    super && (is_deleted == false)
+  end
+
   has_one_attached :profile_image
   def get_profile_image(width, height)
     unless profile_image.attached?
