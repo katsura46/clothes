@@ -1,0 +1,19 @@
+<h2>ユーザー一覧</h2>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>名前</th>
+      <th>詳細</th>
+    </tr>
+  </thead>
+  <% @users.each do |user| %>
+    <tbody>
+      <tr>
+        <td><%= image_tag user.get_profile_image(100,100), class: "profile-image-admin" %></td>
+        <td><%= user.name %></td>
+        <td><%= link_to "詳細ページへ", admin_user_path(user) %></td>
+      </tr>
+    </tbody>
+  <% end %>
+</table>

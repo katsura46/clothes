@@ -1,8 +1,8 @@
 class Public::PostsController < ApplicationController
-  
+ 
+
   def new
     @post = Post.new
-    @genres = Genre.all
     @tags = Tag.all
   end
 
@@ -37,7 +37,6 @@ class Public::PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    @genres = Genre.all
   end
 
   def update
@@ -57,6 +56,6 @@ class Public::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :comment, :genre_id, :brand, :price, :post_image,  tag_ids: [])
+    params.require(:post).permit(:title, :comment, :brand, :price, :post_image,  tag_ids: [])
   end
 end

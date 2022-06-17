@@ -1,16 +1,26 @@
 <div class = "container">
   <div class ="row">
-    <div class = "col-7">
-      <h2>会員登録をしてみんなと共有しよう！！</h2>
+    <div class = "col-7 mb-5 pb-5">
+      <div class = "row my-5">
+        <h3>みんなが購入した服を見て参考にしたり、</h3><br/>
+        <h3>自分のお気に入りの服を投稿しよう！！</h3>
+      </div>
+      <div class = "row">
+         <h2>会員登録をしてみんなと共有しよう！！</h2>
       <%= link_to new_user_registration_path, class: "btn btn-sign-up" do %>
         <i class="fas fa-user-plus"></i>Sign up
       <% end %>
-      <h2>既にアカウントをお持ちの方</h2>
+      </div>
+     
+      <div class = "row my-5">
+        <h2>既にアカウントをお持ちの方</h2>
       <%= link_to new_user_session_path, class: "btn btn-log-in" do %>
         <i class="fas fa-sign-in-alt"></i>Log in
       <% end %>
+      </div>
+      
     </div>
-    <div class ="col-5">
+    <div class ="col-5 my-5 py-5">
       <h4>みんなの購入した服を見てみよう！！</h4>
       <p>
         ゲストログインは

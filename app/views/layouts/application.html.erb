@@ -31,12 +31,12 @@
               </li>
               <li>
                 <%= link_to category_path, class: "nav-link text-light" do %>
-                  <i class="fas fa-tshirt"></i>item
+                  <i class="fas fa-tshirt"></i>Item-Category
                 <% end %>
               </li>
               <li>
                 <%= link_to posts_path, class: "nav-link text-light" do %>
-                  <i class="far fa-address-card"></i>投稿一覧
+                  <i class="far fa-address-card"></i>Posts
                 <% end %>
               </li>
 
@@ -70,5 +70,8 @@
     <main>
       <%= yield %>
     </main>
+    <footer class="text-center text-white pt-5 pb-4">
+      <p>Portfolio.clothes</p>
+    </footer>
   </body>
 </html>

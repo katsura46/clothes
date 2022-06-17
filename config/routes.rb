@@ -37,16 +37,16 @@ Rails.application.routes.draw do
       get 'favorites' => 'users#favorites'
 
        # 退会確認画面
-      get 'unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
+      get 'users/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
        # 論理削除用のルーティング
-      patch 'withdrawal' => 'users#withdrawal', as: 'withdrawal'
+      patch 'users/withdrawal' => 'users#withdrawal', as: 'withdrawal'
     end
   end
 
 
   namespace :admin do
-
-    resources :genres, only:[:index, :edit, :create, :update]
+    root to: 'users#top'
+    resources :users, only:[:index, :show]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

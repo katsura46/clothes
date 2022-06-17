@@ -1,31 +1,26 @@
-<div class = "col-2 profile text-center">
+<div class = "col-2 profile text-center ">
   <h2>User info</h2>
   <div class = "user-info">
     <div class = "user-image">
       <%= image_tag current_user.get_profile_image(100,100), class: "profile-image-info text-center" %>
-     </div>
-    <table class = "text-left">
-      <thead>
-        <tr>
-          <th class = "name">name</th>
-          <td><%= current_user.name %></td>
-        </tr>
-        <tr>
-          <th><%= link_to "新規投稿する", new_post_path %></th>
-        </tr>
-        <tr>
-          <th><%= link_to "フォローリスト", user_followings_path(current_user) %></th>
-        </tr>
-        <tr>
-          <th><%= link_to "フォロワーリスト", user_followers_path(current_user) %></th>
-        </tr>
-        <tr>
-          <th><%= link_to "お気に入りリスト", user_favorites_path(current_user) %></th>
-        </tr>
-        <tr>
-          <th><%= link_to "プロフィール変更" , edit_user_path(current_user) %> </th>
-        </tr>
-      </thead>
-    </table>
+    </div>
+    <div class = "user-name">
+      <%= current_user.name %>
+    </div>
+    <div class = "row justify-content-center mt-5">
+      <%= link_to "新規投稿する", new_post_path, class: "btn btn-new-post" %>
+    </div>
+    <div class = "row justify-content-center mt-5">
+      <%= link_to "フォローリスト", user_followings_path(current_user), class: "btn btn-follow" %>
+    </div>
+    <div class = "row justify-content-center mt-3">
+      <%= link_to "フォロワーリスト", user_followers_path(current_user), class: "btn btn-follow" %>
+    </div>
+    <div class = "row justify-content-center mt-5">
+      <%= link_to "お気に入りリスト", user_favorites_path(current_user), class: "btn btn-favorite" %>
+    </div>
+    <div class = "row justify-content-center mt-5">
+     <%= link_to "プロフィール変更" , edit_user_path(current_user), class: "btn btn-profile-edit"%>
+    </div>
   </div>
 </div>

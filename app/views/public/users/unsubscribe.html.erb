@@ -1,8 +1,23 @@
-<h2>退会お手続き</h2>
- <p>
-   退会手続きをされますと、全てのサービスがご利用いただけなくなります。<br>
-   再度ご利用をいただく場合には、新規登録のお手続きが必要になります。<br>
-   本当に退会してよろしいですか？
- </p>
-  <%= link_to "退会する", withdrawal_path, method: :patch, data: { confilm: "本当に退会しますか？" } %>
-  <%= link_to "退会しない", user_path(current_user) %>
+<div class = "container mb-5">
+  <div class = "row background-white mt-5 pb-5 ">
+    <h1><span class = "red-font"><i class="fas fa-exclamation-triangle"></i></span>退会お手続き</h1>
+  </div>
+  <div class = "row background-white py-5">
+    <div class = "col">
+      <p class = "unsubscribe-text">
+        退会手続きをされますと、<span class = "red-font">全てのサービスがご利用いただけなくなります。</span><br>
+        再度ご利用をいただく場合には、新規登録のお手続きが必要になります。<br>
+        本当に<strong><span class = "red-font">退会</span></strong>してよろしいですか？
+      </p>
+    </div>
+  </div>
+  <div class = "row background-white pl-5 py-5">
+    <div class = "col-3 d-flex flex-wrap">
+      <span class = "red-font"><i class="fas fa-exclamation-triangle"></i></span>
+      <%= link_to "退会する", user_withdrawal_path, method: :patch, data: { confilm: "本当に退会しますか？" }, class: "btn btn-delete" %>
+    </div>
+    <div class = "col-3 offset-2 d-flex flex-wrap">
+     <%= link_to "退会しない", user_path(current_user), class: "btn btn-post" %>
+    </div>
+  </div>
+</div>
