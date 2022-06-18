@@ -1,66 +1,66 @@
 <div class = "container-fluid">
-  <div class = "row long-photo">
-    <%= image_tag 'default-image.jpg', class:'long-photo' %>
-  </div>
-  <div class = "row">
+  <div class = "row justify-content-center">
     <%= render "public/users/current_user_info" %>
     <div class = "col d-flex flex-wrap">
-      <div class = "col-6">
+      <div class = "col-sm-12 col-md-5 mt-5">
         <%= image_tag @post.post_image, class: "post-image" %>
       </div>
-      <div class = "col-5">
-        <div class = "row">
+      <div class = "col-sm-12 col-md-6 background-white px-5 mt-5">
+        <div class = "row mt-4 post-title">
           <label>投稿タイトル：</label>
           <%= @post.title %>
+        </div>
+        <div class = "row mt-2">
+          <label>カテゴリ：</label>
           <% @post.tags.each do |tag| %>
             <%= tag.name %>
           <% end %>
-          <label class = "ml-3">ジャンル：</label>
-          <%= @post.genre.genre_name %>
         </div>
-        <div class = "row">
-          <div class = "favorite_icon", id = "favorite_buttons_<%= @post.id %>">
+        <div class = "row mt-2">
+          <div class = "col-sm-12 col-md-3 favorite_icon", id = "favorite_buttons_<%= @post.id %>">
             <%= render "public/favorites/favorite", post: @post %>
           </div>
-          <div><%= link_to "投稿内容変更", edit_post_path(@post) %></div>
+          <% if current_user == @user %>
+            <div class = "col-sm-12 col-md-3 offset-5">
+              <%= link_to "投稿内容変更", edit_post_path(@post), class: "btn btn-profile-edit" %>
+            </div>
+          <% end %>
         </div>
-        <div class = "row">
-          <label>ブランド名：</label>
-          <%= @post.brand %>
-          <label class = "ml-3">値段：</label>
+        <div class = "row mt-3">
+          <div class = "col-5">
+            <label>ブランド名：</label>
+            <%= @post.brand %>
+          </div>
+          <div class = "col-5 offset-1">
+            <label class = "ml-3">値段：</label>
             <%= @post.price %>円
+          </div>
         </div>
-        <div class = "row">
+        <div class = "row mt-3">
           <label>投稿者コメント：</label>
           <%= @post.comment %>
         </div>
-        <div class = "row">
-          <div class = "col-6">
+        <div class = "row mt-5">
+          <div class = "col-sm-12 col-md-5">
           <%= image_tag @user.profile_image, class: "profile-image-info" %>
           </div>
-          <div class = "col-6">
+          <div class = "col-sm-12 col-md-7">
             <label>投稿者：</label>
             <%= link_to user_path(@user.id) do %>
               <%= @user.name %>
             <% end %><br/>
-            <label>投稿者紹介</label>
+            <label>投稿者紹介：</label>
             <%= @user.introduction %>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class = "row">
-    <div class = "new-comment">
-      <%= render "public/comments/form", post: @post, comment: @comment %>
-    </div>
+  <div class = "new-comment">
+    <%= render "public/comments/form", post: @post, comment: @comment %>
   </div>
-  <div class = "row mb-5">
-    <div class = "col offset-1">
-      <div id = "comments_area">
-        <%= render "public/comments/post_comments", post: @post, comments: @comments %>
-      </div>
-    </div>
+  <div id = "comments_area">
+    <%= render "public/comments/post_comments", post: @post, comments: @comments %>
   </div>
 </div>
 

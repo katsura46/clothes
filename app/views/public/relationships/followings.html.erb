@@ -5,12 +5,12 @@
     <% else %>
       <%= render "public/users/user_info"%>
     <% end %>
-    <div class = "col-8 offset-1">
+    <div class = "col-sm-12 col-md-8 offset-md-1">
       <% if @users.exists? %>
         <% @users.each do |user| %>
           <div class = "row d-flex flex-wrap background-white my-2">
             <%= image_tag user.profile_image, class: "profile-image-info" %>
-            <div class = "col-3  ml-3 mt-4">
+            <div class = "col-sm-12 col-md-3 ml-md-3 mt-4">
               ユーザー名：<%= link_to user.name, user_path(user) %><br/>
               <% if user != current_user %>
                 <% if current_user.following?(user) %>
@@ -22,12 +22,12 @@
                 <% end %>
               <% end %>
             </div>
-            <div class = "col-3 mt-4">
+            <div class = "col-sm-12 col-md-3 mt-4">
               <%= link_to "フォローリスト", user_followings_path(user), class: "btn btn-follow" %><br/>
               <i class="fas fa-angle-double-right"></i><i class="fas fa-user-friends"></i>
               フォロー数: <%= user.followings.count %>
             </div>
-            <div class = "col-3 mt-4">
+            <div class = "col-sm-12 col-md-3 mt-4">
               <%= link_to "フォロワーリスト", user_followers_path(user), class: "btn btn-follow" %><br/>
               <i class="fas fa-angle-double-left"></i><i class="fas fa-user-friends"></i>
               フォロワー数: <%= user.followers.count %></td>

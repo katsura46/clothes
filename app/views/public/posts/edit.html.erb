@@ -1,7 +1,4 @@
 <div class = "container-fluid">
-  <div class = "row long-photo">
-    <%= image_tag 'default-image.jpg', class:'long-photo' %>
-  </div>
   <div class = "row">
     <%= render "public/users/current_user_info" %>
     <div class = "col-6 offset-1">
@@ -10,34 +7,41 @@
       </div>
     <%= form_with model: @post, url: post_path(@post), method: :patch do |f| %>
       <div class = "row form-group">
-        <label>投稿タイトル</label>
+        <label>投稿タイトル　※15文字以内</label>
         <%= f.text_field :title, autofocus: true, class: "form-control" %>
-       </div>
+      </div>
       <div class = "row">
          <label>投稿写真</label>
          <%= f.file_field :post_image, class: "form-control" %>
-       </div>
-      <div class = "row">
-        <label>ジャンル選択</label>
-        <%= f.collection_select(:genre_id, @genres, :id, :genre_name, {prompt: "選択してください"}, {class: "form-control"}) %>
+      </div>
+      <div class = "row mt-2">カテゴリ選択（複数選択可）</div>
+      <div class="row check_box">
+        <%= f.collection_check_boxes(:tag_ids, @tags, :id, :name) do |tag| %>
+          <div class='form-check'>
+         　 <%= tag.label do %>
+          　  <%= tag.check_box %>
+          　  <%= tag.text %>
+          　<% end %>
+          </div>
+        <% end %>
       </div>
       <div class = "row form-group">
         <label>ブランド名</label>
         <%= f.text_field :brand, class: "form-control" %>
       </div>
       <div class = "row form-group">
-        <label>値段</label>
+        <label>値段　※単位不要</label>
         <%= f.text_field :price, class: "form-control" %>
       </div>
       <div class = "row form-group">
-        <label>投稿者コメント</label>
+        <label>投稿者コメント　※0～200文字以内</label>
         <%= f.text_area :comment, class: "form-control" %>
       </div>
-      <div class = "offset-5">
-        <%= button_tag(type: "submit", class: "btn bgleft shadow-sm ml-2") do %>
+      <div class = "row offset-5 my-5">
+        <%= button_tag(type: "submit", class: "btn btn-profile-edit") do %>
           <span>変更</span>
         <% end %>
-        </div>
+      </div>
     <% end %>
     </div>
   </div>

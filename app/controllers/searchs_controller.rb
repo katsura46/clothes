@@ -7,7 +7,7 @@ class Public::SearchsController < ApplicationController
     # 検索ワードを@contentに代入。
     @content = params["content"]
     # @model, @content, @methodを代入した、search_forを@recordsに代入。
-    @records = search_for(@model, @content, @method)
+    @records = search_for(@model, @content, @method).page(params[:page])
   end
 
   private

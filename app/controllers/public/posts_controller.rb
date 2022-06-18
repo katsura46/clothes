@@ -1,5 +1,5 @@
 class Public::PostsController < ApplicationController
- 
+
 
   def new
     @post = Post.new
@@ -24,7 +24,7 @@ class Public::PostsController < ApplicationController
   end
 
   def index
-    @posts = params[:name].present? ? Tag.find(params[:name]).posts : Post.all
+    @posts = params[:name].present? ? Tag.find(params[:name]).posts : Post.page(params[:page])
     @tags = Tag.all
   end
 
@@ -33,10 +33,12 @@ class Public::PostsController < ApplicationController
     @user = @post.user
     @comment = Comment.new
     @comments = @post.comments
+
   end
 
   def edit
     @post = Post.find(params[:id])
+    @tags = Tag.all
   end
 
   def update

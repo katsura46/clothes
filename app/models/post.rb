@@ -3,7 +3,6 @@ class Post < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
   
   belongs_to :user
-  belongs_to :genre
 
   # コメント機能
   has_many :comments, dependent: :destroy
