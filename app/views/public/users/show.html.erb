@@ -1,4 +1,5 @@
 <div class = "container-fiuld">
+  <p class = "row notice" id="notice"><%= notice %></p>
   <div class = "row">
     <%= render "current_user_info" %>
     <div class = "col d-flex flex-wrap">
@@ -47,9 +48,9 @@
           </div>
         </div>
         <div class = "row mt-5">
-          <div class = "col-4 offset-8">
-            <% if @user == current_user %>
-              <%= link_to "退会する", user_unsubscribe_path(current_user), class: "btn btn-delete" %>
+          <div class = "col-md-4 offset-md-8">
+            <% if  current_user.admin? || @user == current_user %>
+              <%= link_to "退会する", user_unsubscribe_path(@user), class: "btn btn-delete" %>
             <% end %>
           </div>
         </div>

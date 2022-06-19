@@ -1,6 +1,16 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
+.admin-top {
+  height: 600px;
+}
+
+.alert {
+  padding-left: 30px;
+  font-size: 30px;
+  color: #dc143c;
+}
+
 .background-white {
 background-color: white;
 }
@@ -52,7 +62,7 @@ background-color: white;
   background-color: #1e90ff;
 }
 
-.btn-sign-up {
+.btn-sign-up-top {
   text-align: center;
   display: flex;
   justify-content: center;
@@ -64,7 +74,31 @@ background-color: white;
   background-color: #00F9A9;
 }
 
+.btn-sign-up {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+  color: #FFFFDD;
+  background-color: #00F9A9;
+}
+
 .btn-log-in {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+  color: #FFFFDD;
+  background-color: #005FFF;
+}
+
+.btn-log-in-top {
   text-align: center;
   display: flex;
   justify-content: center;
@@ -151,6 +185,15 @@ footer {
   height: 400px;
   margin: 30px;
   background-color: #e0ffff;
+  box-shadow: 0 5px #808080;
+}
+
+.post-image-text:hover {
+  width: 300px;
+  height: 400px;
+  margin: 40px 30px 30px 30px;
+  background-color: #ffd700;
+  box-shadow: none;
 }
 
 .post-image {
@@ -161,6 +204,10 @@ footer {
 .post-image-index {
   width: 240px;
   height: 300px;
+}
+
+.post-title {
+  font-size: 30px;
 }
 
 .long-photo {
@@ -188,9 +235,14 @@ footer {
   margin: 30px 0;
 }
 
-.post-title {
+.notice {
+  padding-left: 30px;
   font-size: 30px;
+  color: #FFFFDD;
+  background-color: #00fa9a;
 }
+
+
 
 .profile {
   margin: 0px 0px 0px 50px;
@@ -306,7 +358,7 @@ footer {
   border: dotted 3px #1e90ff;
 }
 
-.btn-sign-up:hover {
+.btn-sign-up-top:hover {
   text-align: center;
   display: flex;
   justify-content: center;
@@ -319,7 +371,33 @@ footer {
   border: dotted 3px #00F9A9;
 }
 
+.btn-sign-up:hover {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+  color: #00F9A9;
+  background-color: #FFFFDD;
+  border: dotted 3px #00F9A9;
+}
+
 .btn-log-in:hover {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+  color: #005FFF;
+  background-color: #FFFFDD;
+  border: dotted 3px #005FFF;
+}
+
+.btn-log-in-top:hover {
   text-align: center;
   display: flex;
   justify-content: center;
@@ -382,3 +460,4 @@ footer {
   background-color: #FFFFDD;
   border: dotted 3px #8b4513;
 }
+

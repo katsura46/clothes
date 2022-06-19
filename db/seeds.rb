@@ -25,7 +25,10 @@ Tag.create([
 
     ])
 
-    Admin.create!(
-      email: 'test@test',
-      password: 'testtest',
-      )
+
+  User.create(
+    name: "管理者",
+    email: 'admin@admin',
+    password: 'adminadmin',
+    admin: true
+    )

@@ -1,4 +1,7 @@
 <div class = "container">
+  <div class = "row">
+    <p class = "alert" id="alert"><%= alert %></p>
+  </div
   <div class ="row">
     <div class = "col-7 mb-5 pb-5">
       <div class = "row my-5">
@@ -7,24 +10,24 @@
       </div>
       <div class = "row">
          <h2>会員登録をしてみんなと共有しよう！！</h2>
-      <%= link_to new_user_registration_path, class: "btn btn-sign-up" do %>
+      <%= link_to new_user_registration_path, class: "btn btn-sign-up-top" do %>
         <i class="fas fa-user-plus"></i>Sign up
       <% end %>
       </div>
-     
+
       <div class = "row my-5">
         <h2>既にアカウントをお持ちの方</h2>
-      <%= link_to new_user_session_path, class: "btn btn-log-in" do %>
+      <%= link_to new_user_session_path, class: "btn btn-log-in-top" do %>
         <i class="fas fa-sign-in-alt"></i>Log in
       <% end %>
       </div>
-      
+
     </div>
     <div class ="col-5 my-5 py-5">
       <h4>みんなの購入した服を見てみよう！！</h4>
       <p>
         ゲストログインは
-        <%= link_to "こちら", posts_path %>
+        <%= link_to 'こちら', users_guest_sign_in_path, method: :post, class: "login" %>
         から
       </p>
     </div>

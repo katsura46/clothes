@@ -24,43 +24,43 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
-              <li>
-                <%= link_to user_path(current_user.id), class: "nav-link text-light" do %>
-                  <i class="fas fa-user-tie"></i> My page
-                <% end %>
-              </li>
-              <li>
-                <%= link_to category_path, class: "nav-link text-light" do %>
-                  <i class="fas fa-tshirt"></i>Item-Category
-                <% end %>
-              </li>
-              <li>
-                <%= link_to posts_path, class: "nav-link text-light" do %>
-                  <i class="far fa-address-card"></i>Posts
-                <% end %>
-              </li>
+                <li>
+                  <%= link_to user_path(current_user.id), class: "nav-link text-light" do %>
+                    <i class="fas fa-user-tie"></i> My page
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to category_path, class: "nav-link text-light" do %>
+                    <i class="fas fa-tshirt"></i>Item-Category
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to posts_path, class: "nav-link text-light" do %>
+                    <i class="far fa-address-card"></i>Posts
+                  <% end %>
+                </li>
 
-              <li>
-                <%= link_to users_log_out_confirm_path, class: "nav-link text-light" do %>
-                  <i class="fas fa-sign-out-alt"></i>Log_out
-                <% end %>
-              </li>
-              <% else %>
-              <li>
-                 <%= link_to root_path, class: "nav-link text-light" do %>
-                   <i class="fas fa-home"></i>Home
-                 <% end %>
-              </li>
-              <li>
-                <%= link_to new_user_registration_path, class: "nav-link text-light" do %>
-                  <i class="fas fa-user-plus"></i>Sign up
-                <% end %>
-              </li>
-              <li>
-                <%= link_to new_user_session_path, class: "nav-link text-light" do %>
-                  <i class="fas fa-sign-in-alt"></i> Log in
-                <% end %>
-              </li>
+                <li>
+                  <%= link_to users_log_out_confirm_path, class: "nav-link text-light" do %>
+                    <i class="fas fa-sign-out-alt"></i>Log_out
+                  <% end %>
+                </li>
+                <% else %>
+                <li>
+                   <%= link_to root_path, class: "nav-link text-light" do %>
+                     <i class="fas fa-home"></i>Home
+                   <% end %>
+                </li>
+                <li>
+                  <%= link_to new_user_registration_path, class: "nav-link text-light" do %>
+                    <i class="fas fa-user-plus"></i>Sign up
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to new_user_session_path, class: "nav-link text-light" do %>
+                    <i class="fas fa-sign-in-alt"></i> Log in
+                  <% end %>
+                </li>
               <% end %>
             </ul>
           </div>

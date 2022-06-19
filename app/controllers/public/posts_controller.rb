@@ -1,5 +1,5 @@
 class Public::PostsController < ApplicationController
-
+  before_action :authenticate_user!
 
   def new
     @post = Post.new
@@ -13,7 +13,7 @@ class Public::PostsController < ApplicationController
       redirect_to post_path(@post)
       flash[:notice] = "投稿しました！！"
     else
-       @posts = Post.all
+       @posts = Post.page(params[:page])
        @user = current_user
        render :index
     end
@@ -24,7 +24,8 @@ class Public::PostsController < ApplicationController
   end
 
   def index
-    @posts = params[:name].present? ? Tag.find(params[:name]).posts : Post.page(params[:page])
+    @post = Post.new
+    @posts = params[:name].present? ? Tag.find(params[:name]).posts.page(params[:page]) : Post.page(params[:page])
     @tags = Tag.all
   end
 
@@ -39,6 +40,11 @@ class Public::PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
     @tags = Tag.all
+    if current_user.admin? || @post.user == current_user
+      render "edit"
+    else
+      redirect_to posts_path
+    end
   end
 
   def update
@@ -47,11 +53,16 @@ class Public::PostsController < ApplicationController
       flash[:notice] = "投稿内容を変更しました"
       redirect_to post_path(@post.id)
     else
+      @tags = Tag.all
+      flash[:alert] = "投稿内容の更新に失敗しました"
       render :edit
     end
   end
 
   def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
 
 

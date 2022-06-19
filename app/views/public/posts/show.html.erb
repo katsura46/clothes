@@ -1,4 +1,5 @@
 <div class = "container-fluid">
+  <p class = "row notice" id = "notice"><%= notice %></p>
   <div class = "row justify-content-center">
     <%= render "public/users/current_user_info" %>
     <div class = "col d-flex flex-wrap">
@@ -20,18 +21,21 @@
           <div class = "col-sm-12 col-md-3 favorite_icon", id = "favorite_buttons_<%= @post.id %>">
             <%= render "public/favorites/favorite", post: @post %>
           </div>
-          <% if current_user == @user %>
-            <div class = "col-sm-12 col-md-3 offset-5">
+          <% if current_user.admin? || current_user == @user %>
+            <div class = "col-sm-8 col-md-3 offset-md-1">
               <%= link_to "投稿内容変更", edit_post_path(@post), class: "btn btn-profile-edit" %>
+            </div>
+            <div class = "col-sm-4 col-md-3 offset-md-2">
+              <%= link_to "投稿削除", post_path(@post), method: :delete, class: "btn btn-delete" %>
             </div>
           <% end %>
         </div>
         <div class = "row mt-3">
-          <div class = "col-5">
+          <div class = "col-sm-12 col-md-5">
             <label>ブランド名：</label>
             <%= @post.brand %>
           </div>
-          <div class = "col-5 offset-1">
+          <div class = "col-sm-12 col-md-5 offset-md-1">
             <label class = "ml-3">値段：</label>
             <%= @post.price %>円
           </div>

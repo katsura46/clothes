@@ -1,45 +1,49 @@
-<h2>新規アカウント登録</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "public/shared/error_messages", resource: resource %>
-  <div class = "field" >
-    <div class = "row">
-      <div class = "col-2">
-        <%= f.label :名前 %>
+<div class = "container">
+  <h2>新規アカウント登録</h2>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "public/shared/error_messages", resource: resource %>
+    <div class = "row my-4 field">
+      <div class = "col-4 offset-1">
+        <%= f.label :名前　※10文字まで %>
         <%= f.text_field :name, autofocus: true, placeholder: "名前",class: "form-control" %>
       </div>
     </div>
+    <div class = "col offset-1 sex-field" >
+      <%= f.label :性別 %><br />
+      <%= f.label :男性 %>
+      <%= f.radio_button :sex, :men %>
+      <%= f.label :女性 %>
+      <%= f.radio_button :sex, :women %>
+    </div>
+    <div class = "row my-3">
+      <div class = "col offset-1 field" >
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autocomplete: "email" %>
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col offset-1 field" >
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %>文字以上)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col offset-1 field" >
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+    </div>
+    <div class= "row actions justify-content-center my-5" >
+      <%= f.submit "Sign up", class: "btn btn-sign-up" %>
+    </div>
+  <% end %>
+  <div class = "row justify-content-center my-5 pt-5">
+    <%= render "public/shared/links" %>
   </div>
 
-  <div class = "sex-field" >
-    <%= f.label :性別 %><br />
-    <%= f.label :男性 %>
-    <%= f.radio_button :sex, :men %>
-    <%= f.label :女性 %>
-    <%= f.radio_button :sex, :women %>
-  </div>
+</div>
 
-  <div class = "field" >
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
-  </div>
 
-  <div class = "field" >
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class = "field" >
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class= "actions" >
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "public/shared/links" %>

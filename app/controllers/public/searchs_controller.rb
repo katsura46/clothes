@@ -24,8 +24,6 @@ class Public::SearchsController < ApplicationController
     elsif model == 'brand'
       Post.where('brand LIKE ?', '%'+content+'%')
       
-    
     end
-
   end
 end

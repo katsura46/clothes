@@ -1,27 +1,31 @@
 <div class = "container">
+  <div class = "row">
+    <p class = "alert" id="alert"><%= alert %></p>
+  </div>
+  <%= render "layouts/error", obj: @user %>
   <div class = "row my-5">
     <h2>プロフィール変更</h2>
   </div>
-<%= form_with model:@user,url: user_path(current_user), method: :patch do |f| %>
-  <div class = "row form-group">
-    <label for="user_name">プロフィール画像変更</label>
-    <%= f.file_field :profile_image ,class: "form-control" %>
-  </div>
-  <div class = "row form-group">
-    <label>名前変更　※10文字以内</label>
-    <%= f.text_field :name ,class: "form-control" %>
-  </div>
-  <div class = "row form-group">
-    <label>自己紹介文　※0～200文字以内</label>
-    <%= f.text_area :introduction ,class: "form-control" %>
-  </div>
-  <div class = "row form-group">
-    <label>メールアドレス変更</label>
-    <%= f.email_field :email ,class: "form-control" %>
-  </div>
-  <div class="row justify-content-center my-5 form-group">
-    <%= f.submit '変更', class: "btn btn-profile-edit" %>
-  </div>
-<% end %>
+  <%= form_with model:@user,url: user_path(current_user), method: :patch do |f| %>
+    <div class = "row form-group">
+      <label for="user_name">プロフィール画像変更</label>
+      <%= f.file_field :profile_image ,class: "form-control" %>
+    </div>
+    <div class = "row form-group">
+      <label>名前変更　※10文字以内</label>
+      <%= f.text_field :name ,class: "form-control" %>
+    </div>
+    <div class = "row form-group">
+      <label>自己紹介文　※0～200文字以内</label>
+      <%= f.text_area :introduction ,class: "form-control" %>
+    </div>
+    <div class = "row form-group">
+      <label>メールアドレス変更</label>
+      <%= f.email_field :email ,class: "form-control" %>
+    </div>
+    <div class="row justify-content-center my-5 form-group">
+      <%= f.submit '変更', class: "btn btn-profile-edit" %>
+    </div>
+  <% end %>
 </div>
 

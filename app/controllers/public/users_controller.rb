@@ -1,6 +1,6 @@
 class  Public::UsersController < ApplicationController
-  
-  
+  before_action :authenticate_user!
+
   def index
     @users = User.page(params[:page])
     @user = User.find(params[:id])
@@ -12,7 +12,12 @@ class  Public::UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user
+    @user = User.find(params[:id])
+    if current_user.admin? || @user == current_user
+      render "edit"
+    else
+      redirect_to posts_path
+    end
   end
 
   def update
@@ -27,7 +32,10 @@ class  Public::UsersController < ApplicationController
   end
 
   def withdrawal
-    current_user.update(is_deleted: true)
+
+    @user = User.find(params[:user_id])
+    @user.update(is_deleted: true)
+    # current_user.update(is_deleted: true)
     reset_session
     flash[:notice] = "退会処理を実行いたしました"
     redirect_to root_path
@@ -39,10 +47,12 @@ class  Public::UsersController < ApplicationController
     @favorite_posts = Post.find(favorites)
   end
 
-
   def log_out_confirm
   end
 
+  def unsubscribe
+
+  end
   private
 
   def user_params

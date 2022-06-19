@@ -1,3 +1,5 @@
 <div class = "container-fluid background">
-   <%= render "index", posts: @posts, tags: @tags %>
+  <p class = "row notice" id="notice"><%= notice %></p>
+  <%= render "layouts/error", obj: @post %>
+  <%= render "index", posts: @posts, tags: @tags %>
 </div>

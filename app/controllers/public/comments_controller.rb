@@ -8,7 +8,7 @@ class Public::CommentsController < ApplicationController
     else
       @post_new = Post.new
       @comments = @post.comments
-      redirect_to new_post_path
+      redirect_to post_path(@post)
     end
   end
 

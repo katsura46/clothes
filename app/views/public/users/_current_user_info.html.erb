@@ -7,6 +7,7 @@
     <div class = "user-name">
       <%= current_user.name %>
     </div>
+    <% #if current_user != new_guest %>
     <div class = "row justify-content-center mt-5">
       <%= link_to "新規投稿する", new_post_path, class: "btn btn-new-post" %>
     </div>
@@ -22,5 +23,6 @@
     <div class = "row justify-content-center mt-5">
      <%= link_to "プロフィール変更" , edit_user_path(current_user), class: "btn btn-profile-edit" %>
     </div>
+    <% #end %>
   </div>
 </div>

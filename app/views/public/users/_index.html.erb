@@ -7,7 +7,7 @@
           <div class = "row d-flex flex-wrap background-white my-2">
             <%= image_tag user.profile_image, class: "profile-image-info" %>
             <div class = "col-sm-12 col-md-3 ml-md-3 mt-4">
-              ユーザー名：<%= user.name %><br/>
+              ユーザー名：<%= link_to user.name, user_path(user) %><br/>
               <% if user != current_user %>
                 <% if current_user.following?(user) %>
                   <i class="fas fa-angle-double-right"></i><i class="fas fa-user-friends"></i>：フォロー中

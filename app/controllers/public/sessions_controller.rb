@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 class Public::SessionsController < Devise::SessionsController
+    def new_guest
+      user = User.guest
+      sign_in user
+      redirect_to posts_path, notice: 'ゲストユーザーとしてログインしました。'
+    end
 
     protected
 
