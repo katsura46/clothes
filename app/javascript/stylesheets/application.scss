@@ -15,6 +15,24 @@
 background-color: white;
 }
 
+body {
+  background-color: #fafad2;
+  font-family: "Comic Sans MS";
+}
+
+.btn {
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px 5px ;
+  border: dashed 1px #FFF;
+}
+
+.btn:hover {
+  color: #00bfff;
+  box-shadow: 0px 0px 0px 5px #00bfff ;
+}
+
 .btn-delete {
   text-align: center;
   display: flex;
@@ -26,6 +44,20 @@ background-color: white;
   color: #FFFFDD;
   background-color: red;
 }
+
+.btn-delete:hover {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 35px;
+  font-size: 15px;
+  color: red;
+  background-color: #FFFFDD;
+  border: dotted 3px red;
+}
+
 .btn-edit {
   text-align: center;
   display: flex;
@@ -36,6 +68,19 @@ background-color: white;
   font-size: 40px;
   color: #FFFFDD;
   background-color: #00F9A9;
+}
+
+.btn-edit:hover {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 50px;
+  font-size: 40px;
+  color: #00F9A9;
+  background-color: #FFFFDD;
+  border: dotted 3px #00F9A9;
 }
 
 .btn-favorite {
@@ -50,6 +95,19 @@ background-color: white;
   background-color: #ffb6c1;
 }
 
+.btn-favorite:hover {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 35px;
+  font-size: 15px;
+  color: #ffb6c1;
+  background-color: #FFFFDD;
+  border: dotted 3px #ffb6c1;
+}
+
 .btn-follow {
   text-align: center;
   display: flex;
@@ -62,16 +120,17 @@ background-color: white;
   background-color: #1e90ff;
 }
 
-.btn-sign-up-top {
+.btn-follow:hover {
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 50px;
-  font-size: 40px;
-  color: #FFFFDD;
-  background-color: #00F9A9;
+  width: 180px;
+  height: 35px;
+  font-size: 15px;
+  color: #1e90ff;
+  background-color: #FFFFDD;
+  border: dotted 3px #1e90ff;
 }
 
 .btn-sign-up {
@@ -86,6 +145,44 @@ background-color: white;
   background-color: #00F9A9;
 }
 
+.btn-sign-up:hover {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+  color: #00F9A9;
+  background-color: #FFFFDD;
+  border: dotted 3px #00F9A9;
+}
+
+.btn-sign-up-top {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 50px;
+  font-size: 40px;
+  color: #FFFFDD;
+  background-color: #00F9A9;
+}
+
+.btn-sign-up-top:hover {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 50px;
+  font-size: 40px;
+  color: #00F9A9;
+  background-color: #FFFFDD;
+  border: dotted 3px #00F9A9;
+}
+
 .btn-log-in {
   text-align: center;
   display: flex;
@@ -96,6 +193,19 @@ background-color: white;
   font-size: 20px;
   color: #FFFFDD;
   background-color: #005FFF;
+}
+
+.btn-log-in:hover {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+  color: #005FFF;
+  background-color: #FFFFDD;
+  border: dotted 3px #005FFF;
 }
 
 .btn-log-in-top {
@@ -110,6 +220,19 @@ background-color: white;
   background-color: #005FFF;
 }
 
+.btn-log-in-top:hover {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 50px;
+  font-size: 40px;
+  color: #005FFF;
+  background-color: #FFFFDD;
+  border: dotted 3px #005FFF;
+}
+
 .btn-new-post {
   text-align: center;
   display: flex;
@@ -120,6 +243,19 @@ background-color: white;
   font-size: 15px;
   color: #FFFFDD;
   background-color: #ffd700;
+}
+
+.btn-new-post:hover {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 35px;
+  font-size: 15px;
+  color: #ffd700;
+  background-color: #FFFFDD;
+  border: dotted 3px #ffd700;
 }
 
 .btn-post {
@@ -134,6 +270,19 @@ background-color: white;
   background-color: #00bfff;
 }
 
+.btn-post:hover {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 35px;
+  font-size: 15px;
+  color: #00bfff;
+  background-color: #FFFFDD;
+  border: dotted 3px #00bfff;
+}
+
 .btn-profile-edit {
   text-align: center;
   display: flex;
@@ -144,6 +293,19 @@ background-color: white;
   font-size: 15px;
   color: #FFFFDD;
   background-color: #00fa9a;
+}
+
+.btn-profile-edit:hover {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 35px;
+  font-size: 15px;
+  color: #00fa9a;
+  background-color: #FFFFDD;
+  border: dotted 3px #00fa9a;
 }
 
 .btn-seach {
@@ -157,15 +319,22 @@ background-color: white;
   background-color: #8b4513;
 }
 
-body {
-  background-color: #fafad2;
-  font-family: "Comic Sans MS";
+.btn-seach:hover {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 35px;
+  font-size: 15px;
+  color: #8b4513;
+  background-color: #FFFFDD;
+  border: dotted 3px #8b4513;
 }
+
 
 .d-flex {
   display: inline-flex;
   padding: 10px;
-
 }
 
 .favorite_icon {
@@ -178,6 +347,37 @@ body {
 
 footer {
   background-color: #00008b;
+}
+
+.log_out_comfirm {
+  margin: 100px auto 300px;
+}
+
+.navbar {
+  height: 100px;
+  color: #FFFFDD;
+  background-color: #00BFFF;
+}
+
+.navbar-brand {
+  font-size: 50px;
+  font-family: "Comic Sans MS";
+}
+.nav-link {
+  background-color: #00BFFF;
+}
+
+.navbar-nav {
+  font-size: 30px;
+  font-family: "Comic Sans MS";
+  margin: 30px 0;
+}
+
+.notice {
+  padding-left: 30px;
+  font-size: 30px;
+  color: #FFFFDD;
+  background-color: #00fa9a;
 }
 
 .post-image-text {
@@ -210,43 +410,8 @@ footer {
   font-size: 30px;
 }
 
-.long-photo {
-  width: 1500px;
-  height: 150px;
-}
-
-.navbar {
-  height: 100px;
-  color: #FFFFDD;
-  background-color: #00BFFF;
-}
-
-.navbar-brand {
-  font-size: 50px;
-  font-family: "Comic Sans MS";
-}
-.nav-link {
-  background-color: #00BFFF;
-}
-
-.navbar-nav {
-  font-size: 30px;
-  font-family: "Comic Sans MS";
-  margin: 30px 0;
-}
-
-.notice {
-  padding-left: 30px;
-  font-size: 30px;
-  color: #FFFFDD;
-  background-color: #00fa9a;
-}
-
-
-
 .profile {
   margin: 0px 0px 0px 50px;
-
 }
 
 .profile-image {
@@ -272,6 +437,10 @@ footer {
   border-radius: 50%;
 }
 
+.red-font {
+  color: red;
+}
+
 .unsubscribe-text {
   font-size: 20px;
 }
@@ -284,180 +453,3 @@ footer {
 .user-name {
   font-size: 20px;
 }
-
-.log_out_comfirm {
-  margin: 100px auto 300px;
-}
-
-.red-font {
-  color: red;
-}
-
-.btn {
-  padding: 0.5em 1em;
-  text-decoration: none;
-  border-radius: 4px;
-  box-shadow: 0px 0px 0px 5px ;
-  border: dashed 1px #FFF;
-}
-
-.btn:hover {
-  color: #00bfff;
-  box-shadow: 0px 0px 0px 5px #00bfff ;
-}
-
-.btn-delete:hover {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 130px;
-  height: 35px;
-  font-size: 15px;
-  color: red;
-  background-color: #FFFFDD;
-  border: dotted 3px red;
-}
-
-.btn-edit:hover {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 50px;
-  font-size: 40px;
-  color: #00F9A9;
-  background-color: #FFFFDD;
-  border: dotted 3px #00F9A9;
-}
-
-.btn-favorite:hover {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 180px;
-  height: 35px;
-  font-size: 15px;
-  color: #ffb6c1;
-  background-color: #FFFFDD;
-  border: dotted 3px #ffb6c1;
-}
-
-.btn-follow:hover {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 180px;
-  height: 35px;
-  font-size: 15px;
-  color: #1e90ff;
-  background-color: #FFFFDD;
-  border: dotted 3px #1e90ff;
-}
-
-.btn-sign-up-top:hover {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 50px;
-  font-size: 40px;
-  color: #00F9A9;
-  background-color: #FFFFDD;
-  border: dotted 3px #00F9A9;
-}
-
-.btn-sign-up:hover {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 150px;
-  height: 50px;
-  font-size: 20px;
-  color: #00F9A9;
-  background-color: #FFFFDD;
-  border: dotted 3px #00F9A9;
-}
-
-.btn-log-in:hover {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 150px;
-  height: 50px;
-  font-size: 20px;
-  color: #005FFF;
-  background-color: #FFFFDD;
-  border: dotted 3px #005FFF;
-}
-
-.btn-log-in-top:hover {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 50px;
-  font-size: 40px;
-  color: #005FFF;
-  background-color: #FFFFDD;
-  border: dotted 3px #005FFF;
-}
-
-.btn-new-post:hover {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 180px;
-  height: 35px;
-  font-size: 15px;
-  color: #ffd700;
-  background-color: #FFFFDD;
-  border: dotted 3px #ffd700;
-}
-
-.btn-post:hover {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 180px;
-  height: 35px;
-  font-size: 15px;
-  color: #00bfff;
-  background-color: #FFFFDD;
-  border: dotted 3px #00bfff;
-}
-
-.btn-profile-edit:hover {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 180px;
-  height: 35px;
-  font-size: 15px;
-  color: #00fa9a;
-  background-color: #FFFFDD;
-  border: dotted 3px #00fa9a;
-}
-
-.btn-seach:hover {
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  width: 80px;
-  height: 35px;
-  font-size: 15px;
-  color: #8b4513;
-  background-color: #FFFFDD;
-  border: dotted 3px #8b4513;
-}
-
