@@ -28,5 +28,5 @@ class Post < ApplicationRecord
   validates :post_image, presence: true
   validates :comment, presence: true, length:{maximum:200}
   validates :brand, presence: true
-  validates :price, presence: true
+  validates :price, presence: true, numericality: {only_integer: true}
 end

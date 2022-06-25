@@ -3,7 +3,7 @@
   <%= render "layouts/error", obj: @post %>
   <div class = "row">
     <%= render "public/users/current_user_info" %>
-    <div class = "col-6 offset-1">
+    <div class = "col-sm-12 col-md-6 offset-md-1 background-white-clear">
       <div class = "row  mb-2">
         <h3>投稿内容変更画面</h3>
       </div>
@@ -17,7 +17,7 @@
            <%= f.file_field :post_image, class: "form-control" %>
         </div>
         <div class = "row mt-2">カテゴリ選択（複数選択可）</div>
-        <div class="row check_box">
+        <div class="row check_box background-white-clear">
           <%= f.collection_check_boxes(:tag_ids, @tags, :id, :name) do |tag| %>
             <div class='form-check'>
            　 <%= tag.label do %>
@@ -40,7 +40,7 @@
           <%= f.text_area :comment, class: "form-control" %>
         </div>
         <div class = "row offset-5 my-5">
-          <%= button_tag(type: "submit", class: "btn btn-profile-edit") do %>
+          <%= button_tag(type: "submit", onClick: "return isCheck()", class: "btn btn-profile-edit") do %>
             <span>変更</span>
           <% end %>
         </div>
@@ -48,3 +48,23 @@
     </div>
   </div>
 </div>
+<script>
+  function isCheck() {
+    let arr_checkBoxes = document.getElementsByClassName("form-check");
+    let count = 0;
+    for (let i = 0; i < arr_checkBoxes.length; i++) {
+       let cnt = i + 1;
+        if ($('#post_tag_ids_' + cnt).prop('checked')) {
+            count++;
+        }
+    }
+
+    if (count > 0) {
+        return true;
+    } else {
+        window.alert("カテゴリを1つ以上選択してください。");
+        return false;
+    };
+
+}
+</script>

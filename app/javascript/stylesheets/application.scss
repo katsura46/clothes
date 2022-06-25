@@ -12,11 +12,15 @@
 }
 
 .background-white {
-background-color: white;
+  background-color: white;
+}
+
+.background-white-clear {
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 body {
-  background-color: #fafad2;
   font-family: "Comic Sans MS";
 }
 
@@ -163,7 +167,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
+  width: 280px;
   height: 50px;
   font-size: 40px;
   color: #FFFFDD;
@@ -175,7 +179,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
+  width: 280px;
   height: 50px;
   font-size: 40px;
   color: #00F9A9;
@@ -213,7 +217,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
+  width: 280px;
   height: 50px;
   font-size: 40px;
   color: #FFFFDD;
@@ -225,7 +229,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
+  width: 280px;
   height: 50px;
   font-size: 40px;
   color: #005FFF;
@@ -331,7 +335,6 @@ body {
   border: dotted 3px #8b4513;
 }
 
-
 .d-flex {
   display: inline-flex;
   padding: 10px;
@@ -353,18 +356,9 @@ footer {
   margin: 100px auto 300px;
 }
 
-.navbar {
-  height: 100px;
-  color: #FFFFDD;
-  background-color: #00BFFF;
-}
-
 .navbar-brand {
   font-size: 50px;
   font-family: "Comic Sans MS";
-}
-.nav-link {
-  background-color: #00BFFF;
 }
 
 .navbar-nav {
@@ -425,6 +419,7 @@ footer {
   height: 100px;
   border-radius: 50%;
 }
+
 .profile-image-comment {
   width: 100px;
   height: 100px;
@@ -441,13 +436,12 @@ footer {
   color: red;
 }
 
+.top-img {
+  width: 100%;
+  height: 100%;
+}
 .unsubscribe-text {
   font-size: 20px;
-}
-
-.user-info {
-  height: 600px;
-  background-color: white;
 }
 
 .user-name {

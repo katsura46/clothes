@@ -8,7 +8,7 @@
       </div>
       <div class = "col-sm-12 col-md-6 background-white px-5 mt-5">
         <div class = "row mt-4 post-title">
-          <label>投稿タイトル：</label>
+          <label>投稿タイトル</label>
           <%= @post.title %>
         </div>
         <div class = "row mt-2">
@@ -26,12 +26,12 @@
               <%= link_to "投稿内容変更", edit_post_path(@post), class: "btn btn-profile-edit" %>
             </div>
             <div class = "col-sm-4 col-md-3 offset-md-2">
-              <%= link_to "投稿削除", post_path(@post), method: :delete, class: "btn btn-delete" %>
+              <%= link_to "投稿削除", post_path(@post), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-delete" %>
             </div>
           <% end %>
         </div>
         <div class = "row mt-3">
-          <div class = "col-sm-12 col-md-5">
+          <div class = "col-sm-12 col-md-6">
             <label>ブランド名：</label>
             <%= @post.brand %>
           </div>
@@ -41,7 +41,7 @@
           </div>
         </div>
         <div class = "row mt-3">
-          <label>投稿者コメント：</label>
+          <label>投稿者コメント</label>
           <%= @post.comment %>
         </div>
         <div class = "row mt-5">

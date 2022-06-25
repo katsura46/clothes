@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -18,7 +19,7 @@
             <span>Clothes</span>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                        aria-controls="navbarNavDropdown" aria-exoanded="false" aria-label="Toggle navigation">
+                        aria-controls="navbarNavDropdown" aria-exoanded="false" aria-label="Toggle navigation" id="navbar-button">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -45,7 +46,7 @@
                     <i class="fas fa-sign-out-alt"></i>Log_out
                   <% end %>
                 </li>
-                <% else %>
+              <% else %>
                 <li>
                    <%= link_to root_path, class: "nav-link text-light" do %>
                      <i class="fas fa-home"></i>Home

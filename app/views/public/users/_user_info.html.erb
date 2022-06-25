@@ -1,14 +1,14 @@
 <div class = "col-sm-12 col-md-2 profile text-center ">
-  <h2 class = "font-gray">User info</h2>
-  <div class = "user-info">
+  <h2 class = "font-gray background-white-clear">User info</h2>
+  <div class = "user-info profile-back pt-3">
     <div class = "user-image">
-      <%= image_tag @user.get_profile_image(100,100), class: "profile-image-info text-center" %>
+      <%= image_tag @user.get_profile_image, class: "profile-image-info text-center" %>
     </div>
     <div class = "user-name">
       <%= @user.name %>
     </div>
     <div class = "row justify-content-center mt-5">
-      
+
     </div>
     <div class = "row justify-content-center mt-5">
       <%= link_to "フォローリスト", user_followings_path(@user), class: "btn btn-follow" %>
@@ -17,10 +17,10 @@
       <%= link_to "フォロワーリスト", user_followers_path(@user), class: "btn btn-follow" %>
     </div>
     <div class = "row justify-content-center mt-4">
-      
+
     </div>
     <div class = "row justify-content-center mt-4">
-     
+
     </div>
   </div>
 </div>

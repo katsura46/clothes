@@ -16,3 +16,16 @@ import '@fortawesome/fontawesome-free/js/all'
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+
+
+$(document).ready(function () {
+    $('#navbar-button').click(function () {
+        // Bootstrapの時差制約により反転
+        if (!$('#navbarNavDropdown').hasClass('show')) {
+            $("main").css("padding-top", "300px");
+        } else {
+            $("main").css("padding-top", "0px");
+        }
+    })
+});
