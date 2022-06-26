@@ -12,11 +12,11 @@
     </div>
   </div>
   <div class = "row background-white pl-5 py-5">
-    <div class = "col-3 d-flex flex-wrap">
+    <div class = "col-sm-12 col-md-3 d-flex flex-wrap">
       <span class = "red-font"><i class="fas fa-exclamation-triangle"></i></span>
       <%= link_to "退会する", user_withdrawal_path, method: :patch, data: { confirm: "本当に退会しますか？" }, class: "btn btn-delete" %>
     </div>
-    <div class = "col-3 offset-2 d-flex flex-wrap">
+    <div class = "col-sm-12 col-md-3 offset-md-2 d-flex flex-wrap">
      <%= link_to "退会しない", user_path(current_user), class: "btn btn-post" %>
     </div>
   </div>
