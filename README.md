@@ -20,7 +20,8 @@
 - 自分が買った服を周りと共有したい時。
 
 ## 設計書
-
+- テスト設計書
+- https://docs.google.com/spreadsheets/d/1HTgLIVj5ushxx5-dB17cXSeYibSPUIpK3xXqwpA7nOE/edit#gid=698588145
 
 ## 開発環境
 - OS：Linux(CentOS)
