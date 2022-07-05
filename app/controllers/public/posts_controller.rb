@@ -10,6 +10,10 @@ class Public::PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
+      genres = Vision.get_image_data(@post.post_image)
+      genres.each do |genre|
+        @post.genres.create(name: genre)
+      end
       redirect_to post_path(@post)
       flash[:notice] = "投稿しました！！"
     else

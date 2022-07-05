@@ -16,6 +16,9 @@
           <% @post.tags.each do |tag| %>
             <%= tag.name %>
           <% end %>
+          <% @post.genres.each do |genre| %>
+            <%= genre.name %>
+          <% end %>
         </div>
         <div class = "row mt-2">
           <div class = "col-sm-12 col-md-3 favorite_icon", id = "favorite_buttons_<%= @post.id %>">
