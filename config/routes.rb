@@ -11,9 +11,6 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'public/sessions#new_guest'
   end
 
-
- 
-
   get 'homes/top'
   root to: 'homes#top'
 
