@@ -23,7 +23,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto justify-content-center">
               <% if user_signed_in? %>
                 <li>
                   <%= link_to user_path(current_user.id), class: "nav-link text-light" do %>
@@ -46,6 +46,11 @@
                     <i class="fas fa-sign-out-alt"></i>Log_out
                   <% end %>
                 </li>
+
+                <li class = "ml-3">
+                  <%= render 'public/searchs/form' %>
+                </li>
+
               <% else %>
                 <li>
                    <%= link_to root_path, class: "nav-link text-light" do %>
