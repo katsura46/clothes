@@ -19,7 +19,8 @@ class Public::PostsController < ApplicationController
     else
        @posts = Post.page(params[:page])
        @user = current_user
-       render :index
+       @tags = Tag.all
+       render :new
     end
   end
 
