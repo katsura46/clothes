@@ -6,6 +6,7 @@
       <%= render "public/users/user_info"%>
     <% end %>
     <div class = "col-sm-12 col-md-8 offset-md-1">
+      <h4 class = "background-white-clear">フォロワーリスト</h4>
       <% if @users.exists? %>
         <% @users.each do |user| %>
           <div class = "row d-flex flex-wrap background-white my-2">
